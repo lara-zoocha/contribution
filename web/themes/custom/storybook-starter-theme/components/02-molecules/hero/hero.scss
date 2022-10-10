@@ -1,0 +1,65 @@
+@import '../../imports.scss';
+
+.hero {
+  position: relative;
+  max-width: 140rem;
+  margin: 0 auto $padding-large;
+}
+
+.hero__image,
+.hero img {
+  width: 100%;
+}
+
+.hero__content {
+  .heading,
+  .paragraph {
+    color: clr(text-inverse);
+    padding: $padding-default;
+    margin-bottom: 0;
+  }
+
+  .heading {
+    font-family: $font-h1;
+    line-height: 1.5;
+    background-color: clr(primary);
+  }
+
+  .paragraph {
+    background-color: clr(primary-dark);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hero__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .heading,
+    .paragraph {
+      padding: $padding-default $padding-large;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .heading {
+      background-color: clr(primary-op80);
+      min-width: 35%;
+      max-width: 55%;
+    }
+
+    .paragraph {
+      min-width: 65%;
+      max-width: 85%;
+      min-height: $padding-large * 2;
+    }
+  }
+
+  .hero__content--with-subtitle {
+    bottom: -$padding-large;
+  }
+}
